@@ -1,15 +1,11 @@
 view us {
     match-clients { us; };
-
-    allow-recursion { any; };
     
     include "/etc/bind/zones/us.override";
 };
     
 view uk {
     match-clients { uk; };
-
-    allow-recursion { any; };
     
     include "/etc/bind/zones/uk.override";
     
