@@ -1,0 +1,20 @@
+options {
+        directory "/var/cache/bind";
+
+        forwarders {
+            2001:4860:4860::8888;
+            2001:4860:4860::8844;
+            8.8.8.8;
+            8.8.4.4;
+        };
+
+        dnssec-validation auto;
+
+        auth-nxdomain no;    # conform to RFC1035
+        listen-on-v6 { any; };
+
+        allow-query { any; };
+        allow-transfer { none; };
+
+        include "/etc/bind/named.recursion.conf";
+};
