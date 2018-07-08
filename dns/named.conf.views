@@ -4,12 +4,6 @@ view us {
     allow-recursion { any; };
     
     include "/etc/bind/zones/us.override";
-    
-    forwarders {
-                8.8.8.8;
-                8.8.4.4;
-        };
-    
 };
     
 view uk {
@@ -19,22 +13,6 @@ view uk {
     
     include "/etc/bind/zones/uk.override";
     
-    forwarders {
-                8.8.8.8;
-                8.8.4.4;
-        };
-    
 };
 
-view default {
-    match-clients { default; };
-
-    allow-recursion { any; };
-    
-    forwarders {
-                8.8.8.8;
-                8.8.4.4;
-        };
-    
- };
     
