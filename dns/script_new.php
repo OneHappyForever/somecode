@@ -88,7 +88,12 @@ Before doing so, however, we want to compare both files to make sure they are in
 -----------------------
 */
 
-//create function for comparing files before overwriting
+/*create function for comparing files before overwriting
+
+Question: Should we dirrectly compare files this way, or should we compare arrays before writing the new file?
+Is comparing filesizes prone to errors if the files were created at different times and have different names?
+
+*/
 function compareFiles($file_a, $file_b)
 {
     if (filesize($file_a) == filesize($file_b))
