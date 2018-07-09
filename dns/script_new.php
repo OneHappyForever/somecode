@@ -77,6 +77,8 @@ foreach ($results as $row) {
 $txt = "}; \n";
 fwrite($myfile, $txt);
 
+fclose($myfile);
+
 
 /*
 -----------------------
