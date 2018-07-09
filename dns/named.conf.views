@@ -1,11 +1,15 @@
 view us {
     match-clients { us; };
     
+    include "/etc/named/named.conf.options";
+    
     include "/etc/named/zones/zones.overrride.us";
 };
     
 view uk {
     match-clients { uk; };
+    
+    include "/etc/named/named.conf.options";
     
     include "/etc/named/zones/zones.override.uk";
     
