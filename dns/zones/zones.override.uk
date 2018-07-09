@@ -1,1 +1,1 @@
-zone "netflix.com" { type master; file "/etc/bind/zones/db.override.uk"; };
+zone "netflix.com" { type master; file "/etc/named/zones/db.override.uk"; };
