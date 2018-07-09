@@ -1,13 +1,13 @@
 view us {
     match-clients { us; };
     
-    include "/etc/bind/zones/us.override";
+    include "/etc/named/zones/zones.overrride.us";
 };
     
 view uk {
     match-clients { uk; };
     
-    include "/etc/bind/zones/uk.override";
+    include "/etc/named/zones/zones.override.uk";
     
 };
 
