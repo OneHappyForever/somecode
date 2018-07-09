@@ -77,71 +77,11 @@ foreach ($results as $row) {
 $txt = "}; \n";
 fwrite($myfile, $txt);
 
-/*write the rest of the file
-
-The below config is obviously significantly lacking. I would recommend creating separate files for the IPs, views, configs, etc.
-And then in the general configs, simply including them, like so:
-
-include "/etc/bind/named.conf.options";
-include "/etc/bind/named.conf.acl";
-include "/etc/bind/named.conf.default-zones";
-
-
-/etc/bind/named.conf.acl:
-acl "us" {
-    1.1.1.1; 4.4.4.4; 123.456.789.0; 
-};
-acl "uk" {
-	2.2.2.2; 5.5.5.5; 342.643.1.45;
-}
-
-
-/etc/bind/named.recursion.conf:
-allow-recursion { trusted; };
-recursion yes;
-additional-from-auth yes;
-additional-from-cache yes;
-
-/etc/bind/named.conf.options:
-options {
-        directory "/var/cache/bind";
-
-        forwarders {
-            2001:4860:4860::8888;
-            2001:4860:4860::8844;
-            8.8.8.8;
-            8.8.4.4;
-        };
-
-        dnssec-validation auto;
-
-        auth-nxdomain no;    # conform to RFC1035
-        listen-on-v6 { any; };
-
-        allow-query { trusted; };
-        allow-transfer { none; };
-
-        include "/etc/bind/named.recursion.conf";
-};
-
-*/
-$txt = "acl any {\n    any;\n};";
-fwrite($myfile, $txt);
-$txt = "view us {\n     match-clients { us; };\n    allow-recursion { us; };\n    include "/etc/bind/zonesus.override";\n    recursion yes;\n    additional-from-auth yes;\n    additional-from-cache yes;\n};";
-fwrite($myfile, $txt);
-$txt = "view uk {\n     match-clients { uk; };\n    allow-recursion { uk; };\n    include "/etc/bind/zonesuk.override";\n    recursion yes;\n    additional-from-auth yes;\n    additional-from-cache yes;\n};";
-fwrite($myfile, $txt);
-$txt = "view any {\n     match-clients { any; };\n    allow-recursion { any; };\n    recursion yes;\n    additional-from-auth yes;\n    additional-from-cache yes;\n};";
-fwrite($myfile, $txt);
-fclose($myfile);
-
-
-
 
 /*
 -----------------------
 Now that the new config file is created, we want to replace the old one. 
-Before doing so, however, we want to compare both files to make sure they are indeed different to prevent unneccessary bind restarts
+Before doing so, however, we want to compare both files to make sure they are indeed different to prevent unnecessary bind restarts
 
 -----------------------
 */
@@ -175,7 +115,7 @@ function compareFiles($file_a, $file_b)
 }
 
 //get new and old file locations
-$oldfile = "/etc/bind/named.conf";
+$oldfile = "/etc/bind/named.conf.acl";
 $newfile = "newfile.txt";
 
 //overwrite oldfile
@@ -185,7 +125,8 @@ if (!compareFiles($oldfile, $newfile)) {
 
 
 //restart bind
-exec ('systemctl bind restart > bindrestart.log 2>&1');
+	exec ('update-rc.d bind9 defaults > bindrestart.log');
+	exec ('service bind9 restart > bindrestart.log'); 
 /*
 If a program is started with this function, in order for it to continue running in the background, 
 the output of the program must be redirected to a file or another output stream. 
