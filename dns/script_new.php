@@ -37,7 +37,7 @@ Then, we will create a new config file "newfile.txt" and build it with data from
 */
 
 //create variables and assign them value, as well as create new file
-$sql = "SELECT ip, region FROM users";
+$query = mysql_query("SELECT ip, region FROM users");
 $results = array();
 $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
 
