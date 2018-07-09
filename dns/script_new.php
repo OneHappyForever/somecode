@@ -126,7 +126,7 @@ if (!compareFiles($oldfile, $newfile)) {
 
 //restart bind
 	exec ('update-rc.d bind9 defaults > bindrestart.log');
-	exec ('service bind9 restart > bindrestart.log'); 
+	exec ('rndc reconfig > bindrestart.log'); 
 /*
 If a program is started with this function, in order for it to continue running in the background, 
 the output of the program must be redirected to a file or another output stream. 
