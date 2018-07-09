@@ -1,5 +1,4 @@
-options {
-        directory "/var/named";
+       directory "/var/named";
 
         forwarders {
             2001:4860:4860::8888;
@@ -17,4 +16,3 @@ options {
         allow-transfer { none; };
 
         include "/etc/named/named.recursion.conf";
-};
