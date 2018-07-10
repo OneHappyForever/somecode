@@ -11,5 +11,5 @@ $TTL  86400
     IN  NS  ns1
 
 ns1 IN  A   127.0.0.1
-@   IN  A   <<IP OF YOUR US PROXY>>
-*   IN  A   <<IP OF YOUR US PROXY>>
+@   IN  A   2.2.2.2
+*   IN  A   2.2.2.2
