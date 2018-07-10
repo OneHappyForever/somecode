@@ -1,9 +1,9 @@
 # this is the only file that will be updated by the script
 
-acl us {
+acl "us" {
   
 };
 
-acl uk {
+acl "uk" {
 
 };
