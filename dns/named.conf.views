@@ -1,18 +1,20 @@
-view us {
+view "us" {
     match-clients { us; };
     
-    include "/etc/bind/named.conf.options";
-    
+    include "/etc/bind/named.conf.default-zones";
     include "/etc/bind/zones/zones.overrride.us";
 };
     
-view uk {
+view "uk" {
     match-clients { uk; };
     
-    include "/etc/bind/named.conf.options";
-    
+    include "/etc/bind/named.conf.default-zones";
     include "/etc/bind/zones/zones.override.uk";
     
+};
+
+view "default" {
+    include "/etc/bind/named.conf.default-zones";
 };
 
     
