@@ -50,7 +50,7 @@ while($line = mysql_fetch_array($query)){
 
 
 //write acl US ips
-$txt = "acl us { ";
+$txt = 'acl "us" { ';
 fwrite($myfile, $txt);
 
 foreach ($results as $row) {
@@ -64,7 +64,7 @@ $txt = "}; \n";
 fwrite($myfile, $txt);
 
 //write acl uk ips
-$txt = "acl uk { ";
+$txt = 'acl "uk" { ';
 fwrite($myfile, $txt);
 
 foreach ($results as $row) {
