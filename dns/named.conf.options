@@ -1,4 +1,5 @@
-       directory "/var/named";
+options {
+        directory "/var/cache/bind";
 
         forwarders {
             2001:4860:4860::8888;
@@ -12,7 +13,8 @@
         auth-nxdomain no;    # conform to RFC1035
         listen-on-v6 { any; };
 
-        allow-query { us; uk; };
+        allow-query { any; };
         allow-transfer { none; };
 
         include "/etc/bind/named.recursion.conf";
+};
