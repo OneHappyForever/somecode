@@ -2,7 +2,7 @@ view "us" {
     match-clients { us; };
     
     include "/etc/bind/named.conf.default-zones";
-    include "/etc/bind/zones/zones.overrride.us";
+    include "/etc/bind/zones/zones.override.us";
 };
     
 view "uk" {
