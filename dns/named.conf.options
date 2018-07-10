@@ -15,4 +15,4 @@
         allow-query { us; uk; };
         allow-transfer { none; };
 
-        include "/etc/named/named.recursion.conf";
+        include "/etc/bind/named.recursion.conf";
