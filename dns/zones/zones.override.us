@@ -1,3 +1,5 @@
 zone "netflix.com" { type master; file "/etc/named/zones/db.override.us"; };
 zone "hulu.com" { type master; file "/etc/named/zones/db.override.us"; };
 zone "amazon.com" { type master; file "/etc/named/zones/db.override.us"; };
+zone "bbc.com" { type master; file "/etc/named/zones/db.override.us"; };
+
