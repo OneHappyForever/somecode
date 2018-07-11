@@ -41,7 +41,7 @@ zone "www.bbc.co.uk." { type master; file "/etc/bind/zones/db.override.uk"; };
 # other sites
 zone "hulu.com." { type master; file "/etc/bind/zones/db.override.us"; };
 zone "huluim.com." { type master; file "/etc/bind/zones/db.override.us"; };
-zone "hbonow.com." { type master; file "/etc/bind/zones/db.override.us"; };;
+zone "hbonow.com." { type master; file "/etc/bind/zones/db.override.us"; };
 zone "hbogo.com." { type master; file "/etc/bind/zones/db.override.us"; };
 zone "amazon.com." { type master; file "/etc/bind/zones/db.override.us"; };
 zone "amazon.co.uk." { type master; file "/etc/bind/zones/db.override.us"; };
