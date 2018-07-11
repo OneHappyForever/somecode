@@ -18,19 +18,66 @@ zone "level3.net." { type master; file "/etc/named/zones/db.override.us"; };
 zone "llnwd.net." { type master; file "/etc/named/zones/db.override.us"; };
 zone "edgecastcdn.net." { type master; file "/etc/named/zones/db.override.us"; };
 zone "cloudfront.net." { type master; file "/etc/named/zones/db.override.us"; };
-*.e.akamai.net
-*.akamaihd.net
-*.uplynk.com
-*.edgefcs.net
-*.edgesuite.net
-*.footprint.net
-*.llnwd.net
-*.llnwi.net
-*.theplatform.com
-*.brightcove.com
+zone "uplynk.com." { type master; file "/etc/named/zones/db.override.us"; };
+zone "edgefcs.net." { type master; file "/etc/named/zones/db.override.us"; };
+zone "llnwi.net." { type master; file "/etc/named/zones/db.override.us"; };
+zone "theplatform.com." { type master; file "/etc/named/zones/db.override.us"; };
+zone "brightcove.com." { type master; file "/etc/named/zones/db.override.us"; };
 
-zone "netflix.com" { type master; file "/etc/named/zones/db.override.us"; };
-zone "hulu.com" { type master; file "/etc/named/zones/db.override.us"; };
-zone "amazon.com" { type master; file "/etc/named/zones/db.override.us"; };
-zone "bbc.com" { type master; file "/etc/named/zones/db.override.uk"; };
+# netflix
+zone "netflix.com." { type master; file "/etc/named/zones/db.override.us"; };
+zone "netflix.net." { type master; file "/etc/named/zones/db.override.us"; };
+zone "nflximg.net." { type master; file "/etc/named/zones/db.override.us"; };
+zone "nflxvideo.net." { type master; file "/etc/named/zones/db.override.us"; };
+zone "nflxso.net." { type master; file "/etc/named/zones/db.override.us"; };
+zone "nflxext.com." { type master; file "/etc/named/zones/db.override.us"; };
+
+# other sites
+hulu.com
+huluim.com
+hbonow.com
+hbogo.com
+amazon.com
+amazon.co.uk
+amazonvideo.com
+crackle.com
+pandora.com
+vudu.com
+blinkbox.com
+abc.com
+fox.com
+theplatform.com
+nbc.com
+nbcuni.com
+ip2location.com
+pbs.org
+warnerbros.com
+southpark.cc.com
+cbs.com
+brightcove.com
+cwtv.com
+spike.com
+go.com
+mtv.com
+mtvnservices.com
+playstation.net
+uplynk.com
+maxmind.com
+disney.com
+disneyjunior.com
+xboxlive.com
+lovefilm.com
+turner.com
+amctv.com
+sho.com
+mog.com
+wdtvlive.com
+beinsportsconnect.tv
+beinsportsconnect.net
+fig.bbc.co.uk
+open.live.bbc.co.uk
+sa.bbc.co.uk
+www.bbc.co.uk
+crunchyroll.com
+ifconfig.co
 
