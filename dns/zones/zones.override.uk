@@ -10,7 +10,7 @@ zone "akamaitech.net." { type master; file "/etc/bind/zones/db.override.us"; };
 zone "akamaitechnologies.com." { type master; file "/etc/bind/zones/db.override.us"; };
 zone "akamaitechnologies.fr." { type master; file "/etc/bind/zones/db.override.us"; };
 zone "akamaized.net." { type master; file "/etc/bind/zones/db.override.us"; };
-zone "edgekey.net." { type master; file "/etc/bind/zones/db.override.us"; };;
+zone "edgekey.net." { type master; file "/etc/bind/zones/db.override.us"; };
 zone "edgesuite.net." { type master; file "/etc/bind/zones/db.override.us"; };
 zone "srip.net." { type master; file "/etc/bind/zones/db.override.us"; };
 zone "footprint.net." { type master; file "/etc/bind/zones/db.override.us"; };
